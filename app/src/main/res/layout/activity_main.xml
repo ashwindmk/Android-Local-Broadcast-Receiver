@@ -21,13 +21,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Broadcast Message"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:layout_marginBottom="24dp"/>
 
         <Button
-            android:id="@+id/go_to_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="GO TO"/>
+            android:id="@+id/register_one_button"
+            android:layout_width="144dp"
+            android:layout_height="48dp"
+            android:text="REGISTER 1"
+            android:layout_marginBottom="24dp"/>
+
+        <Button
+            android:id="@+id/unregister_one_button"
+            android:layout_width="144dp"
+            android:layout_height="48dp"
+            android:text="UNREGISTER 1"
+            android:layout_marginBottom="24dp"/>
+
+        <Button
+            android:id="@+id/to_broadcast_button"
+            android:layout_width="144dp"
+            android:layout_height="48dp"
+            android:text="TO BROADCAST"/>
 
     </LinearLayout>
 

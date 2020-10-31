@@ -2,15 +2,15 @@ package com.example.ashwin.broadcastreceiver;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.content.LocalBroadcastManager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class BroadcastActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+public class BroadcastActivity extends AppCompatActivity {
     private EditText mMessageEditText;
     private Button mBroadcastButton;
 
@@ -30,7 +30,12 @@ public class BroadcastActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String msg = mMessageEditText.getText().toString();
-                Intent intent = new Intent("new_message");
+                Intent intent = new Intent(LocalBroadcastReceiver.ACTION);
+                //Intent intent = new Intent();  // Action is compulsory
+                intent.addCategory("cat1");
+                intent.addCategory("cat2");
+                //intent.addCategory("cat3");
+                //intent.addCategory(null);  // NullPointerException
                 intent.putExtra("message", msg);
                 LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(intent);
                 Toast.makeText(getApplicationContext(), "Message Broadcast Success", Toast.LENGTH_LONG).show();
